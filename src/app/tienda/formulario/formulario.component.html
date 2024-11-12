@@ -1,0 +1,81 @@
+<div class="py-8 px-4 mx-auto max-w-full lg:py-16 bg-white">
+    <!-- Formulario de Pedido -->
+    <form [formGroup]="pedidoForm" (ngSubmit)="enviar()" class="mx-auto w-full max-w-3xl">
+      <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 w-full">
+  
+        <!-- Nombre -->
+        <div class="mb-5">
+          <label for="nombre" class="block mb-2 text-sm font-medium text-gray-800">Nombre:</label>
+          <input formControlName="nombre" type="text" placeholder="Ingrese su nombre" class="bg-gray-100 border border-gray-300 text-gray-800 text-sm rounded-lg block w-full p-2.5 focus:ring-0 focus:border-blue-600" />
+        </div>
+  
+        <!-- Dirección -->
+        <div class="mb-5">
+          <label for="direccion" class="block mb-2 text-sm font-medium text-gray-800">Dirección:</label>
+          <input formControlName="direccion" type="text" placeholder="Ingrese su dirección" class="bg-gray-100 border border-gray-300 text-gray-800 text-sm rounded-lg block w-full p-2.5 focus:ring-0 focus:border-blue-600" />
+        </div>
+  
+        <!-- Teléfono -->
+        <div class="mb-5">
+          <label for="telefono" class="block mb-2 text-sm font-medium text-gray-800">Teléfono:</label>
+          <input formControlName="telefono" type="text" pattern="[4-7]{3}-[0-9]{3}-[0-9]{4}" placeholder="477-111-1111" class="block py-2.5 pl-6 pr-0 w-full text-sm text-gray-800 bg-gray-100 border-b-2 border-gray-300 appearance-none focus:border-blue-600 focus:outline-none" />
+        </div>
+  
+        <!-- Tamaño Pizza -->
+        <div class="mb-5">
+          <label class="block text-sm font-medium text-gray-800">Tamaño:</label>
+          <div>
+            <input type="radio" formControlName="tamanio" value="40" id="option-1" class="w-4 h-4 border-gray-300 bg-gray-200 text-gray-500" />
+            <label for="option-1" class="ml-2 text-sm font-medium text-gray-800">Chica $40</label>
+          </div>
+          <div>
+            <input type="radio" formControlName="tamanio" value="80" id="option-2" class="w-4 h-4 border-gray-300 bg-gray-200 text-gray-500" />
+            <label for="option-2" class="ml-2 text-sm font-medium text-gray-800">Mediana $80</label>
+          </div>
+          <div>
+            <input type="radio" formControlName="tamanio" value="120" id="option-3" class="w-4 h-4 border-gray-300 bg-gray-200 text-gray-500" />
+            <label for="option-3" class="ml-2 text-sm font-medium text-gray-800">Grande $120</label>
+          </div>
+        </div>
+  
+        <!-- Ingredientes -->
+        <div class="mb-5">
+          <label class="block text-sm font-medium text-gray-800">Ingredientes:</label>
+          <div formGroupName="ingredientes">
+            <div class="flex items-center mb-4">
+              <input type="checkbox" formControlName="jamon" id="checkbox-1" class="w-4 h-4 bg-gray-200 border-gray-300 rounded focus:ring-0" />
+              <label for="checkbox-1" class="ml-2 text-sm font-medium text-gray-800">Jamón $10</label>
+            </div>
+            <div class="flex items-center mb-4">
+              <input type="checkbox" formControlName="pina" id="checkbox-2" class="w-4 h-4 bg-gray-200 border-gray-300 rounded focus:ring-0" />
+              <label for="checkbox-2" class="ml-2 text-sm font-medium text-gray-800">Piña $10</label>
+            </div>
+            <div class="flex items-center mb-4">
+              <input type="checkbox" formControlName="champinones" id="checkbox-3" class="w-4 h-4 bg-gray-200 border-gray-300 rounded focus:ring-0" />
+              <label for="checkbox-3" class="ml-2 text-sm font-medium text-gray-800">Champiñones $10</label>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Número de Pizzas -->
+        <div class="mb-5">
+          <label for="cantidad" class="block mb-2 text-sm font-medium text-gray-800">Num. de Pizzas:</label>
+          <input formControlName="cantidad" type="number" placeholder="Ingrese la cantidad de pizzas" class="bg-gray-100 border border-gray-300 text-gray-800 text-sm rounded-lg block w-full p-2.5 focus:ring-0 focus:border-blue-600" />
+        </div>
+  
+        <!-- Fecha -->
+        <div class="mb-5">
+          <label for="fecha" class="block mb-2 text-sm font-medium text-gray-800">Fecha:</label>
+          <input formControlName="fecha" type="date" class="bg-gray-100 border border-gray-300 text-gray-800 text-sm rounded-lg block w-full p-2.5 focus:ring-0 focus:border-blue-600" />
+        </div>
+  
+        <!-- Botón de Enviar -->
+        <div class="mb-5 sm:col-span-3">
+          <button type="submit" class="text-white bg-blue-600 hover:bg-blue-500 rounded-lg text-sm w-full px-5 py-2.5">
+            Agregar
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  
